@@ -19,21 +19,21 @@
     @livewireStyles
 </head>
 
-<body class="container font-sans antialiased bg-gray-100 sm:mx-8 mx-0">
-
+<body class="font-sans antialiased bg-gray-100">
     <div class="min-h-screen bg-background">
-        @livewire('nav')
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            @livewire('nav')
 
-
-        @yield('content')
-
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
     </div>
 
     @stack('modals')
 
     @livewireScripts
     <script src="https://cdn.ckeditor.com/ckeditor5/37.0.0/classic/ckeditor.js"></script>
-
 </body>
 
 </html>

@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="min-h-screen bg-gradient-to-b">
-        <header class="sticky top-0 z-50 bg-gray-100">
-            <div class="max-w-5xl mx-auto px-4 py-4">
-                <a href="{{ route('pages.home') }}" class="flex items-center text-gray-600 hover:text-gray-900 group">
-                    <span class="font-medium">Volver al blog</span>
+        <header class="sticky top-0 z-0 bg-gray-100 z">
+            <div class="max-w-5xl mx-auto px-6 py-4 flex items-center">
+                <a href="{{ route('pages.home') }}"
+                   class="text-gray-700 hover:text-gray-900 transition font-semibold flex items-center space-x-2"
+                   aria-label="Volver al blog">
+                    <span>← Volver al blog</span>
                 </a>
             </div>
         </header>
+
 
         <main class="bg-gradient-to-b from-gray-50 to-white max-w-5xl mx-auto px-4 py-6 sm:py-8">
             <article class="mb-12">
@@ -154,7 +157,7 @@
                                         <button
                                             class="flex items-center text-gray-500 hover:text-red-500 transition-colors">
                                             <Heart class="w-4 h-4 mr-1" />
-                                            <span class="text-sm">25</span>
+
                                         </button>
                                         <button class="text-gray-500 hover:text-blue-500 transition-colors text-sm">
                                             Responder
