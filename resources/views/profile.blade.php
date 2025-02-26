@@ -36,13 +36,13 @@
                 @csrf
                 @method("PUT")
 
-                <!-- Diseño responsive con flex-col en móviles -->
-                <div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+                <!-- Diseño en dos columnas en pantallas grandes y en columna en móviles -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-5">
                     <!-- Imagen de perfil -->
                     <div class="flex flex-col items-center">
                         <div class="relative group">
                             <img id="profileImage" src="{{ Storage::url($user->photo) }}" alt="Avatar"
-                                class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-white shadow-md">
+                                class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-2 border-white shadow-md">
                             <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <label class="cursor-pointer text-white text-sm px-2 py-1 rounded-full bg-slate-800 hover:bg-slate-700">
                                     Cambiar foto
