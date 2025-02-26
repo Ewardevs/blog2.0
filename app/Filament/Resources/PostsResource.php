@@ -98,6 +98,7 @@ class PostsResource extends Resource
             ->columns([
                 TextColumn::make("title")
                     ->searchable(),
+		ImageColumn::make("image"),
                 TextColumn::make("category.name")->limit(50)
                     ->searchable(),
 

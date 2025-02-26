@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+	<a class="text-pink" href={{route("pages.home")}}>Boton especial para chris</a>
     <div class="mt-14 bg-white shadow-lg rounded-lg p-6 w-full max-w-md mx-auto">
         <h2 class="text-2xl font-bold text-center mb-4">Editar Perfil</h2>
 

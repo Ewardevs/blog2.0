@@ -31,7 +31,7 @@ class AuthController extends Controller
                 "message" => "invalid"
             ], 0);
         }
-        return redirect()->back();
+        return redirect()->route("pages.home");
     }
 
     public function register(RegisterRequest $request)
