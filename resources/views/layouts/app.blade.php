@@ -19,7 +19,7 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-gray-100">
+<body class="container font-sans antialiased bg-gray-100 sm:mx-8 mx-0">
 
     <div class="min-h-screen bg-background">
         @livewire('nav')
