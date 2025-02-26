@@ -24,7 +24,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|min:5',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'photo' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:10240',
+            'photo' => 'nullable|image|max:6000',
         ]);
 
         // Si el usuario sube una nueva foto, guardarla y actualizar el campo 'photo'
