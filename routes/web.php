@@ -18,10 +18,13 @@ Route::post("/register", [AuthController::class,"Register"])->name("register");
 Route::get("/", [PostController::class,"index"])->name("pages.home");
 Route::get("/post/{id}", [PostController::class,"show"])->name("pages.post");
 Route::get("/category/{id}",[CategoryController::class,"view"])->name("category.view");
-Route::get("/profile",[UserController::class,"index"])->name("pages.profile");
-Route::put("/profile",[UserController::class,"update"])->name("pages.profile.update");
 
 Route::middleware(['auth'])->group(function () {
+    Route::get("/profile",[UserController::class,"index"])->name("pages.profile");
+    Route::put("/profile",[UserController::class,"update"])->name("pages.profile.update");
+
+    // Route::get("/permi", [UserController::class,"showform"])->name("ask.permission");
+    // Route::post("/askpermission", [UserController::class,"askPermission"])->name("ask.permission.post");
     Route::post("/post/{id}/comment", [CommentController::class,"store"])->name("pages.home.comment");
     Route::get("/logout", [AuthController::class,"logout"])->name("logout");
 

@@ -57,4 +57,7 @@ class User extends Authenticatable implements FilamentUser
     public function comments(){
         return $this->hasMany(Comments::class);
     }
+    public function askpermission(){
+        return $this->hasOne(AskPermission::class);
+    }
 }

@@ -51,7 +51,7 @@
                             <h3 class="font-bold text-gray-900 text-lg">{{ $posts->user->name }}</h3>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-3 sm:space-x-4 mt-4 sm:mt-0">
+                    {{-- <div class="flex items-center space-x-3 sm:space-x-4 mt-4 sm:mt-0">
                         <button class="flex items-center text-gray-600 hover:text-red-500 transition-colors">
                             <Heart class="w-5 h-5 sm:w-6 sm:h-6" />
                             <span class="font-medium ml-1 sm:ml-2">245</span>
@@ -59,7 +59,7 @@
                         <button class="flex items-center text-gray-600 hover:text-blue-500 transition-colors">
                             <Share2 class="w-5 h-5 sm:w-6 sm:h-6" />
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!-- Contenido -->
@@ -159,9 +159,7 @@
                                             <Heart class="w-4 h-4 mr-1" />
 
                                         </button>
-                                        <button class="text-gray-500 hover:text-blue-500 transition-colors text-sm">
-                                            Responder
-                                        </button>
+
                                     </div>
                                 </div>
                             </div>

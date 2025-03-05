@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\home;
 
 use App\Http\Controllers\Controller;
+use App\Models\AskPermission;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,5 +45,35 @@ class UserController extends Controller
 
         // Redirigir a la vista de edición del perfil con un mensaje de éxito
         return redirect()->route('pages.profile.update')->with('success', 'Perfil actualizado correctamente.');
+    }
+
+    public function showform()
+    {
+        return view('permi');
+    }
+
+    public function askPermission(Request $request)
+    {
+        $validated = $request->validate([
+            'reason' => 'required|string|min:15',
+            'file'   => 'required|mimes:pdf|max:2000'
+        ]);
+
+        // Guardar archivo con un nombre único
+        $file = $request->file('file');
+        $path = $file->store('pdfs',"public"); // Opcional: Usa `storeAs()` para personalizar el nombre
+
+        if (!$path) {
+            return back()->with('error', 'Hubo un problema al subir el archivo.');
+        }
+
+        // Crear la solicitud de permiso
+        AskPermission::create([
+            'file'    => $path,
+            'reason'  => $validated['reason'], // Usamos el array validado
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('pages.profile.update')->with('success', 'Solicitud enviada correctamente.');
     }
 }

@@ -29,7 +29,7 @@
     {{-- Main section --}}
     <main class="container mx-auto px-4 py-12">
         <div class="mb-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            @livewire('home.search')
+            {{-- @livewire('home.search') --}}
             <div class="flex flex-wrap gap-2">
                 @foreach ($categories as $category)
                     <a href="{{ route('category.view', $category->id) }}"
