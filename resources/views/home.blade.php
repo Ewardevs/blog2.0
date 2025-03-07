@@ -12,8 +12,7 @@
                 <div class="flex flex-col justify-center space-y-4">
                     <Badge class="w-fit">Technology</Badge>
                     <h2 class="text-3xl font-bold tracking-tight">{{ $feature_post->title }}</h2>
-                    <p class="text-muted-foreground">Exploring the latest trends and technologies shaping the future of web
-                        development...</p>
+                    <p class="text-muted-foreground">{{$feature_post->extract}}</p>
                     <div class="flex items-center gap-4 text-sm text-muted-foreground">
                         <span>{{ $feature_post->user->name }}</span>
                         <span>•</span>
