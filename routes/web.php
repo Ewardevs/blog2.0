@@ -23,8 +23,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/profile",[UserController::class,"index"])->name("pages.profile");
     Route::put("/profile",[UserController::class,"update"])->name("pages.profile.update");
 
-    Route::get("/permi", [UserController::class,"showform"])->name("ask.permission");
-    Route::post("/askpermission", [UserController::class,"askPermission"])->name("ask.permission.post");
+    // Route::get("/permi", [UserController::class,"showform"])->name("ask.permission");
+    // Route::post("/askpermission", [UserController::class,"askPermission"])->name("ask.permission.post");
     Route::post("/post/{id}/comment", [CommentController::class,"store"])->name("pages.home.comment");
     Route::get("/logout", [AuthController::class,"logout"])->name("logout");
 
