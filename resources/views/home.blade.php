@@ -5,23 +5,27 @@
     <section x-data class="border-b">
         <div class="container mx-auto px-4 py-12">
             <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
-                <div class="relative aspect-video overflow-hidden rounded-lg">
-                    <img src="{{ Storage::url($feature_post->image) }}" alt="Featured post" class="w-full object-cover"
-                        priority />
-                </div>
-                <div class="flex flex-col justify-center space-y-4">
-                    <Badge class="w-fit">Technology</Badge>
-                    <h2 class="text-3xl font-bold tracking-tight">{{ $feature_post->title }}</h2>
-                    <p class="text-muted-foreground">{{$feature_post->extract}}</p>
-                    <div class="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span>{{ $feature_post->user->name }}</span>
-                        <span>•</span>
-                        <span>{{ $feature_post->updated_at->format('Y-m-d') }}</span>
-                        <span>•</span>
-                        <span>5 min read</span>
-                    </div>
-                    <a href={{ route('pages.post', $feature_post->id) }}>Leer más</a>
-                </div>
+                @if ($feature_post)
+    <div class="relative aspect-video overflow-hidden rounded-lg">
+        <img src="{{ Storage::url($feature_post->image) }}" alt="Featured post" class="w-full object-cover" />
+    </div>
+    <div class="flex flex-col justify-center space-y-4">
+        <Badge class="w-fit">Technology</Badge>
+        <h2 class="text-3xl font-bold tracking-tight">{{ $feature_post->title }}</h2>
+        <p class="text-muted-foreground">{{ $feature_post->extract }}</p>
+        <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <span>{{ $feature_post->user?->name ?? 'Autor desconocido' }}</span>
+            <span>•</span>
+            <span>{{ $feature_post->updated_at->format('Y-m-d') }}</span>
+            <span>•</span>
+            <span>5 min read</span>
+        </div>
+        <a href="{{ route('pages.post', $feature_post->id) }}">Leer más</a>
+    </div>
+@else
+    <p>No hay post destacado disponible.</p>
+@endif
+
             </div>
         </div>
     </section>
